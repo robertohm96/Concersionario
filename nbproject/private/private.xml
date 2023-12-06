@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/controladores/VistaComprasController.java</file>
             <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/modelos/listas/ListaClientes.java</file>
-            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/vistas/VistaRegistrar.fxml</file>
             <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/controladores/VistaRegistrarController.java</file>
-            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/vistas/VistaPrincipal.fxml</file>
-            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/modelos/Cliente.java</file>
             <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/controladores/VistaLoginController.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/Proyecto%20fx/Concesionario/src/utiliades/ManejoDatos.java</file>
         </group>
     </open-files>
 </project-private>

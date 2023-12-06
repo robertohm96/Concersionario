@@ -87,7 +87,7 @@ public class VistaLoginController implements Initializable, Utilidades {
             if (event.getSource() == btnIngresar) {
                 if (ManejoDatos.getDatos().getListaClientes().getBuscarCliente(txtCorreo.getText(), txtClave.getText()) != null) {
                     mostrarVistaPrincipal();
-                }else{
+                } else {
                     mostrarAlerta(Alert.AlertType.ERROR, "Credenciales incorrectas", "Algo no anda bien :/");
                 }
 
