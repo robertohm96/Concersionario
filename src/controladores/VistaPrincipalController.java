@@ -9,6 +9,10 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -18,15 +22,41 @@ import javafx.scene.control.Button;
 public class VistaPrincipalController implements Initializable {
 
     @FXML
-    private Button btnInicio;
+    private Label btnInicio;
     @FXML
-    private Button btnCarrito;
+    private Label txtNombreCliente;
     @FXML
-    private Button btnDeseos;
+    private Pane panelA1;
     @FXML
-    private Button btnCompras;
+    private Label txtMarca;
     @FXML
-    private Button btnSalir;
+    private Label txtModelo;
+    @FXML
+    private TextField txtPrecioA;
+    @FXML
+    private Pane panelA2;
+    @FXML
+    private Label txtMarca1;
+    @FXML
+    private Label txtModelo1;
+    @FXML
+    private TextField txtPrecioA1;
+    @FXML
+    private Pane panelA3;
+    @FXML
+    private Label txtMarca2;
+    @FXML
+    private Label txtModelo2;
+    @FXML
+    private TextField txtPrecioA2;
+    @FXML
+    private Pane panelA4;
+    @FXML
+    private Label txtMarca3;
+    @FXML
+    private Label txtModelo3;
+    @FXML
+    private TextField txtPrecioA3;
 
     /**
      * Initializes the controller class.
@@ -35,5 +65,25 @@ public class VistaPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void abrirCatalogo(MouseEvent event) {
+    }
+
+    @FXML
+    private void VerCarrito(MouseEvent event) {
+    }
+
+    @FXML
+    private void verListaDeseos(MouseEvent event) {
+    }
+
+    @FXML
+    private void verCompras(MouseEvent event) {
+    }
+
+    @FXML
+    private void regresar(MouseEvent event) {
+    }
     
 }
