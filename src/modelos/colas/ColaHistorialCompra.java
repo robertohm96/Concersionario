@@ -143,4 +143,9 @@ public class ColaHistorialCompra implements Utilidades {
         }
 
     }
+
+    @Override
+    public boolean cajasVacias() {
+        return true;
+    }
 }
