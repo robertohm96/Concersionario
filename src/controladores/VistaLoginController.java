@@ -119,7 +119,7 @@ public class VistaLoginController implements Initializable, Utilidades {
             Scene scene = new Scene(root);
             Stage stage2 = new Stage();
             stage2.setScene(scene);
-            stage2.initStyle(StageStyle.UNDECORATED);
+            stage2.initStyle(StageStyle.UNDECORATED);          
             stage2.show();
             Stage stage = (Stage) this.btnRegistro.getScene().getWindow();
             stage.close();
