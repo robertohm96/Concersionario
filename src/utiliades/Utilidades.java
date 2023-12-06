@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 public interface Utilidades {
 
     public void mostrarAlerta(AlertType tipo, String mensaje, String titulo);
-    
-    
+
+    public boolean cajasVacias();
+
 }
