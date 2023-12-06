@@ -7,6 +7,8 @@ package controladores;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import modelos.colas.ColaHistorialCompra;
+import utiliades.ManejoDatos;
 
 /**
  * FXML Controller class
@@ -15,12 +17,14 @@ import javafx.fxml.Initializable;
  */
 public class VistaComprasController implements Initializable {
 
+    private ColaHistorialCompra aux = ManejoDatos.getDatos().getColaHistorialCompra();
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
