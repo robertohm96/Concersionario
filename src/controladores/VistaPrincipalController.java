@@ -4,15 +4,32 @@
  */
 package controladores;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 
 /**
  * FXML Controller class
@@ -57,6 +74,54 @@ public class VistaPrincipalController implements Initializable {
     private Label txtModelo3;
     @FXML
     private TextField txtPrecioA3;
+    @FXML
+    private GridPane vistaInicio;
+    @FXML
+    private Pane panelDescripcion;
+    @FXML
+    private ImageView imgContenedor;
+    @FXML
+    private Label txtMarcaGeneral;
+    @FXML
+    private Label txtModeloGneral;
+    @FXML
+    private Label txtColorGeneral;
+    @FXML
+    private Label txtStockGeneral;
+    @FXML
+    private TextField txtPrecioGenral;
+    @FXML
+    private Spinner<?> spinnerCantidadGenral;
+    @FXML
+    private Button btnAddCarrito;
+    @FXML
+    private ImageView btnAddDeseos;
+    @FXML
+    private Label btnCarrito;
+    @FXML
+    private Label btnDeseos;
+    @FXML
+    private Label btnCompras;
+    @FXML
+    private Label btnSalir;
+    @FXML
+    private Pane VistaCarrito;
+    @FXML
+    private Button btnAddCarrito1;
+    @FXML
+    private Button btnAddCarrito11;
+    @FXML
+    private Button btnAddCarrito12;
+    @FXML
+    private Pane vistaDeseos;
+    @FXML
+    private Button btnAddCarrito111;
+    @FXML
+    private Button btnAddCarrito121;
+    @FXML
+    private Pane vistaCompras;
+    @FXML
+    private Pane PanelHistorial;
 
     /**
      * Initializes the controller class.
@@ -64,10 +129,12 @@ public class VistaPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void abrirCatalogo(MouseEvent event) {
+        reseterarVistas();
+        vistaInicio.setVisible(true);
     }
 
     @FXML
@@ -84,6 +151,41 @@ public class VistaPrincipalController implements Initializable {
 
     @FXML
     private void regresar(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaLogin.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage2 = new Stage();
+            stage2.setScene(scene);
+            stage2.initStyle(StageStyle.UNDECORATED);
+            stage2.show();
+            Stage stage = (Stage) this.btnSalir.getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaLoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
+    public void reseterarVistas() {
+        vistaInicio.setVisible(false);
+    }
+
+    @FXML
+    private void agregarCarrito(ActionEvent event) {
+    }
+
+    @FXML
+    private void agregarDeseos(MouseEvent event) {
+    }
+
+    @FXML
+    private void hoverEntro(MouseDragEvent event) {
+    }
+
+    @FXML
+    private void hoverSalio(MouseDragEvent event) {
+    }
+
+  
+
+   
 }
