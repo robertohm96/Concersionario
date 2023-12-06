@@ -17,7 +17,7 @@ public class Vehiculo {
     private String marca, modelo, color;
     private int stock;
     private float precio;
-    private Vehiculo siguiente, anterior;
+    private Vehiculo siguiente;
 
     public Vehiculo(int codigo, Image foto, String marca, String modelo,
             String color, int stock, float precio, Vehiculo siguiente,
@@ -30,7 +30,6 @@ public class Vehiculo {
         this.stock = stock;
         this.precio = precio;
         this.siguiente = siguiente;
-        this.anterior = anterior;
     }
 
     public Image getFoto() {
@@ -96,13 +95,4 @@ public class Vehiculo {
     public void setSiguiente(Vehiculo siguiente) {
         this.siguiente = siguiente;
     }
-
-    public Vehiculo getAnterior() {
-        return anterior;
-    }
-
-    public void setAnterior(Vehiculo anterior) {
-        this.anterior = anterior;
-    }
-
 }

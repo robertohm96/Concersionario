@@ -12,14 +12,18 @@ public class Cliente extends Admin {
 
     private long identificacion, telefono;
     private String nombre, direccion;
-    private Cliente siguiente, anterior;
+    private Cliente siguiente;
 
-    public Cliente(long identificacion, long telefono, String nombre, String direccion, String user, String pasword) {
+    public Cliente(long identificacion,
+            long telefono, String nombre,
+            String direccion, String user,
+            String pasword) {
         super(user, pasword);
         this.identificacion = identificacion;
         this.telefono = telefono;
         this.nombre = nombre;
         this.direccion = direccion;
+        siguiente = null;
     }
 
     public long getIdentificacion() {
@@ -61,13 +65,4 @@ public class Cliente extends Admin {
     public void setSiguiente(Cliente siguiente) {
         this.siguiente = siguiente;
     }
-
-    public Cliente getAnterior() {
-        return anterior;
-    }
-
-    public void setAnterior(Cliente anterior) {
-        this.anterior = anterior;
-    }
-
 }
