@@ -6,7 +6,7 @@ La idea de este proyecto realizado con java fx, es que sirva para la gestion y v
 ### PRESENTADO POR: 
   - Roberto David Hernández
   - Andrés Raúl ramos Álvarez <br>
-  -Daniela del Carmen barrera Martínez <br>
+  - Daniela del Carmen barrera Martínez <br>
 ### DOCENTE: 
    Ruben Baena
 ### CARRERA:
