@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,6 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -19,27 +25,27 @@
          <children>
             <VBox alignment="CENTER" layoutY="240.0" prefHeight="312.0" prefWidth="203.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="btnInicio" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#abrirCatalogo" prefHeight="40.0" prefWidth="322.0" style="-fx-background-color: #675A5A;" text="Inicio" textFill="WHITE">
+                  <Label fx:id="btnInicio" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#abrirCatalogo" onMouseDragEntered="#hoverEntro" onMouseDragExited="#hoverSalio" prefHeight="40.0" prefWidth="322.0" style="-fx-background-color: #A18B8B;" text="Inicio" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#VerCarrito" prefHeight="40.0" prefWidth="276.0" style="-fx-background-color: #675A5A;" text="Carrito" textFill="WHITE">
+                  <Label fx:id="btnCarrito" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#VerCarrito" prefHeight="40.0" prefWidth="276.0" style="-fx-background-color: #675A5A;" text="Carrito" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verListaDeseos" prefHeight="51.0" prefWidth="294.0" style="-fx-background-color: #675A5A;" text="Lista de Deseos" textFill="WHITE">
+                  <Label fx:id="btnDeseos" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verListaDeseos" prefHeight="51.0" prefWidth="294.0" style="-fx-background-color: #675A5A;" text="Lista de Deseos" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verCompras" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #675A5A;" text="Compras" textFill="WHITE">
+                  <Label fx:id="btnCompras" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verCompras" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #675A5A;" text="Compras" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#regresar" prefHeight="40.0" prefWidth="303.0" style="-fx-background-color: #675A5A;" text="Salir" textFill="WHITE">
+                  <Label fx:id="btnSalir" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#regresar" prefHeight="40.0" prefWidth="303.0" style="-fx-background-color: #675A5A;" text="Salir" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -66,7 +72,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane layoutX="-1.0" layoutY="1.0" prefHeight="684.0" prefWidth="657.0" style="-fx-background-color: #D9D9D9;">
+            <GridPane fx:id="vistaInicio" layoutX="-1.0" layoutY="1.0" prefHeight="684.0" prefWidth="657.0" style="-fx-background-color: # A18B8B;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="331.0" minWidth="10.0" prefWidth="331.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="326.0" />
@@ -76,7 +82,7 @@
                 <RowConstraints maxHeight="334.0" minHeight="10.0" prefHeight="334.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #D9D9D9;">
+                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;">
                      <children>
                         <Pane fx:id="panelA1" layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
@@ -108,7 +114,7 @@
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #D9D9D9;" GridPane.columnIndex="1">
+                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;" GridPane.columnIndex="1">
                      <children>
                         <Pane fx:id="panelA2" layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
@@ -140,7 +146,7 @@
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #D9D9D9;" GridPane.rowIndex="1">
+                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;" GridPane.rowIndex="1">
                      <children>
                         <Pane fx:id="panelA3" layoutX="13.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
@@ -172,7 +178,7 @@
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #D9D9D9;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Pane prefHeight="332.0" prefWidth="326.0" style="-fx-background-color: #A18B8B;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Pane fx:id="panelA4" layoutX="10.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
@@ -206,12 +212,213 @@
                   </Pane>
                </children>
             </GridPane>
+            <Pane fx:id="VistaCarrito" prefHeight="690.0" prefWidth="657.0" visible="false">
+               <children>
+                  <TableView layoutX="10.0" layoutY="65.0" prefHeight="400.0" prefWidth="642.0">
+                    <columns>
+                      <TableColumn prefWidth="125.0" text="Marca" />
+                      <TableColumn prefWidth="108.0" text="Modelo" />
+                        <TableColumn prefWidth="107.0" text="Color" />
+                        <TableColumn prefWidth="68.0" text="Cantidad" />
+                        <TableColumn prefWidth="110.0" text="Precio" />
+                        <TableColumn prefWidth="121.0" text="Sub-total" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="42.0" layoutY="527.0" prefHeight="100.0" prefWidth="387.0" style="-fx-spacing: 30;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Button fx:id="btnAddCarrito1" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #00A022; -fx-border-color: black; -fx-border-radius: 10;" text="Comprar" textFill="WHITE" />
+                        <Button fx:id="btnAddCarrito11" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #FF0000; -fx-border-color: black; -fx-border-radius: 10;" text="Eliminar" textFill="WHITE" />
+                        <Button fx:id="btnAddCarrito12" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: #FF7400; -fx-border-color: black; -fx-border-radius: 10;" text="Vaciar Carrito" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane fx:id="vistaDeseos" layoutX="10.0" layoutY="10.0" prefHeight="690.0" prefWidth="657.0" visible="false">
+               <children>
+                  <TableView layoutX="10.0" layoutY="65.0" prefHeight="400.0" prefWidth="642.0">
+                     <columns>
+                        <TableColumn prefWidth="181.0" text="Marca" />
+                        <TableColumn prefWidth="160.0" text="Modelo" />
+                        <TableColumn prefWidth="164.0" text="Color" />
+                        <TableColumn prefWidth="136.0" text="Precio" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="42.0" layoutY="527.0" prefHeight="100.0" prefWidth="387.0" style="-fx-spacing: 30;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Button fx:id="btnAddCarrito111" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #FF0000; -fx-border-color: black; -fx-border-radius: 10;" text="Eliminar" textFill="WHITE" />
+                        <Button fx:id="btnAddCarrito121" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: #FF7400; -fx-border-color: black; -fx-border-radius: 10;" text="Vaciar Lista" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane fx:id="vistaCompras" layoutX="20.0" layoutY="20.0" prefHeight="690.0" prefWidth="657.0" visible="false">
+               <children>
+                  <TableView layoutY="66.0" prefHeight="400.0" prefWidth="642.0">
+                     <columns>
+                        <TableColumn prefWidth="110.0" text="Marca" />
+                        <TableColumn prefWidth="79.0" text="Modelo" />
+                        <TableColumn text="Color" />
+                        <TableColumn prefWidth="83.0" text="Cantidad" />
+                        <TableColumn prefWidth="93.0" text="Precio" />
+                        <TableColumn prefWidth="71.0" text="Sub-total" />
+                        <TableColumn prefWidth="124.0" text="Fecha" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_LEFT" layoutY="534.0" prefHeight="100.0" prefWidth="648.0" style="-fx-spacing: 5;">
+                     <children>
+                        <Label text="Total encompras realizadas: $">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
          </children></AnchorPane>
    </center>
    <right>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="690.0" prefWidth="244.0" style="-fx-background-color: #FFE01C;" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane layoutX="-45.0" layoutY="1.0" prefHeight="690.0" prefWidth="245.0" style="-fx-background-color: #FFE01C;" />
+            <Pane fx:id="panelDescripcion" prefHeight="690.0" prefWidth="245.0" style="-fx-background-color: #FFE01C;" visible="false">
+               <children>
+                  <Pane layoutX="23.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="2.0" prefHeight="200.0" prefWidth="196.0">
+                           <children>
+                              <ImageView fx:id="imgContenedor" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <VBox alignment="CENTER" layoutX="24.0" layoutY="229.0" prefHeight="143.0" prefWidth="197.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 5;">
+                           <children>
+                              <Label fx:id="txtMarcaGeneral" text="Marca">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Modelo:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtModeloGneral" text="null">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Color:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtColorGeneral" text="null">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Stock:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtStockGeneral" text="null">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="387.0" prefHeight="256.0" prefWidth="222.0" style="-fx-spacing: 4;">
+                     <children>
+                        <Label text="Precio">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrecioGenral" alignment="CENTER" prefHeight="36.0" prefWidth="222.0" />
+                        <Label text="Cantidad">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinnerCantidadGenral" editable="true" prefHeight="38.0" prefWidth="222.0" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="222.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btnAddCarrito" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #00A022; -fx-border-color: black; -fx-border-radius: 10;" text="Agregar" textFill="WHITE" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="btnAddDeseos" fitHeight="32.0" fitWidth="70.0" onMouseClicked="#agregarDeseos" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/heart.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane fx:id="PanelHistorial" layoutX="10.0" layoutY="10.0" prefHeight="690.0" prefWidth="245.0" style="-fx-background-color: #FFE01C;" visible="false">
+               <children>
+                  <VBox alignment="CENTER" layoutX="6.0" layoutY="245.0" prefHeight="200.0" prefWidth="231.0">
+                     <children>
+                        <Label text="Historial">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label text="De">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label text="Compras">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
          </children></AnchorPane>
    </right>
 </BorderPane>
