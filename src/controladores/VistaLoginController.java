@@ -19,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import utiliades.ManejoDatos;
 import utiliades.Utilidades;
 
 /**
@@ -26,7 +27,7 @@ import utiliades.Utilidades;
  *
  * @author usuario
  */
-public class VistaLoginController implements Initializable,Utilidades {
+public class VistaLoginController implements Initializable, Utilidades {
 
     @FXML
     private Button btnIngresar;
@@ -70,7 +71,6 @@ public class VistaLoginController implements Initializable,Utilidades {
         }
     }
 
-
     @FXML
     private void salir(MouseEvent event) {
         if (event.getSource() == btnSalir) {
@@ -80,18 +80,52 @@ public class VistaLoginController implements Initializable,Utilidades {
 
     @FXML
     private void Ingresar(ActionEvent event) {
-        
+        if (cajasVacias()) {
+            mostrarAlerta(Alert.AlertType.WARNING, "Debes llenar todos los campos"
+                    + "para poder registrarte como cliente", "Advertencia");
+        } else {
+            if (event.getSource() == btnIngresar) {
+                if (ManejoDatos.getDatos().getListaClientes().getBuscarCliente(txtCorreo.getText(), txtClave.getText()) != null) {
+                    mostrarVistaPrincipal();
+                }else{
+                    mostrarAlerta(Alert.AlertType.ERROR, "Credenciales incorrectas", "Algo no anda bien :/");
+                }
+
+            }
+        }
     }
 
     @Override
     public void mostrarAlerta(Alert.AlertType tipo, String mensaje, String titulo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 
     @Override
     public boolean cajasVacias() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (txtCorreo.getText().isEmpty() || txtClave.getText().isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
     }
-    
-   
+
+    public void mostrarVistaPrincipal() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaPrincipal.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage2 = new Stage();
+            stage2.setScene(scene);
+            stage2.initStyle(StageStyle.UNDECORATED);
+            stage2.show();
+            Stage stage = (Stage) this.btnRegistro.getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaLoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
