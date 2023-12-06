@@ -8,24 +8,34 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import modelos.listas.ListaClientes;
+import utiliades.ManejoDatos;
 
 /**
  *
  * @author usuario
  */
 public class Main extends Application {
-    
-     @Override
-    public void start(Stage primaryStage) {
-       
+
+    @Override
+    public void start(Stage stage) {
+
+        try {
+
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaLogin.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("LoginS");
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -34,5 +44,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
