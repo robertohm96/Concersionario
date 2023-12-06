@@ -53,6 +53,23 @@ public class ListaClientes implements Utilidades {
         }
     }
 
+    public Cliente getBuscarCliente(String usuario, String contra) {
+        Cliente q = null;
+        if (cab == null) {
+            return null;
+        } else {
+            q = cab;
+            do {
+                if (q.getUser().equals(usuario) && q.getPasword().equals(contra)) {
+                    return q;
+                } else {
+                    q = q.getSiguiente();
+                }
+            } while (q != cab);
+            return null;
+        }
+    }
+
     public Cliente getUltimo() {
         Cliente q;
         if (cab == null) {
@@ -202,7 +219,6 @@ public class ListaClientes implements Utilidades {
 
     @Override
     public boolean cajasVacias() {
-
         return true;
     }
 
