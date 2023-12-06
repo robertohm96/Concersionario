@@ -4,101 +4,112 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="524.0" prefWidth="544.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controladores.VistaRegistrarController">
+<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VistaRegistrarController">
    <children>
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="515.0">
+      <ImageView fitHeight="601.0" fitWidth="617.0" layoutY="-118.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../img/backgraund-registro.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutY="343.0" prefHeight="269.0" prefWidth="617.0" style="-fx-background-color: #E6CC23;" />
+      <Pane layoutX="130.0" layoutY="105.0" prefHeight="341.0" prefWidth="358.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-width: 2;">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <VBox alignment="CENTER" layoutX="11.0" layoutY="8.0" prefHeight="326.0" prefWidth="337.0">
                <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtIdentificacion">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Identificacion" />
+                        <TextField fx:id="txtId" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 35;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Nombre" />
+                        <TextField fx:id="txtNombre" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 28;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Direccion" />
+                        <TextField fx:id="txtDireccion" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 28;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Telefono" />
+                        <TextField fx:id="txtTelfono" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 34;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Usuario" />
+                        <TextField fx:id="txtUser" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 15;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" text="Contraseña" />
+                        <TextField fx:id="txtPass" prefHeight="25.0" prefWidth="212.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#Registar" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #00A022;" text="Registrar" textFill="WHITE" />
                </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtNombre">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtDireccion">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtTelefono">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtUsuario">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtPass">
-                     <HBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <Button fx:id="btnRegistrar" mnemonicParsing="false" text="Button" />
+            </VBox>
          </children>
-      </VBox>
+      </Pane>
+      <ImageView fx:id="btnRegresar" fitHeight="57.0" fitWidth="52.0" layoutY="250.0" onMouseClicked="#regresar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/options-2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
