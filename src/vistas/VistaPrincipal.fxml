@@ -70,7 +70,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="710.0" prefWidth="665.0" BorderPane.alignment="CENTER">
          <children>
             <GridPane fx:id="vistaInicio" layoutX="-1.0" layoutY="1.0" prefHeight="684.0" prefWidth="657.0" style="-fx-background-color: # A18B8B;">
               <columnConstraints>
@@ -84,9 +84,9 @@
                <children>
                   <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;">
                      <children>
-                        <Pane fx:id="panelA1" layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
+                        <Pane layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
-                              <Pane layoutX="68.0" layoutY="14.0" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
+                              <Pane fx:id="panelA1" layoutX="68.0" layoutY="14.0" onMouseClicked="#verCarro" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
                                  <children>
                                     <ImageView fitHeight="116.0" fitWidth="167.0" layoutX="2.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -107,18 +107,19 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtPrecioA" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
+                                    <TextField fx:id="txtPrecioA" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
                                  </children>
                               </VBox>
+                              <Label fx:id="txtIdC" layoutX="259.0" layoutY="147.0" text="Label" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;" GridPane.columnIndex="1">
                      <children>
-                        <Pane fx:id="panelA2" layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
+                        <Pane layoutX="13.0" layoutY="26.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
-                              <Pane layoutX="68.0" layoutY="14.0" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
+                              <Pane fx:id="panelA2" layoutX="68.0" layoutY="14.0" onMouseClicked="#verCarro" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
                                  <children>
                                     <ImageView fitHeight="116.0" fitWidth="167.0" layoutX="2.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -139,18 +140,19 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtPrecioA1" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
+                                    <TextField fx:id="txtPrecioA1" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
                                  </children>
                               </VBox>
+                              <Label fx:id="txtIdC1" layoutX="260.0" layoutY="149.0" text="Label" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Pane prefHeight="248.0" prefWidth="331.0" style="-fx-background-color: #A18B8B;" GridPane.rowIndex="1">
                      <children>
-                        <Pane fx:id="panelA3" layoutX="13.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
+                        <Pane layoutX="13.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
-                              <Pane layoutX="68.0" layoutY="14.0" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
+                              <Pane fx:id="panelA3" layoutX="68.0" layoutY="14.0" onMouseClicked="#verCarro" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
                                  <children>
                                     <ImageView fitHeight="116.0" fitWidth="167.0" layoutX="2.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -171,20 +173,21 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtPrecioA2" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
+                                    <TextField fx:id="txtPrecioA2" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
                                  </children>
                               </VBox>
                            </children>
                         </Pane>
+                        <Label fx:id="txtIdC2" layoutX="269.0" layoutY="157.0" text="Label" />
                      </children>
                   </Pane>
                   <Pane prefHeight="332.0" prefWidth="326.0" style="-fx-background-color: #A18B8B;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Pane fx:id="panelA4" layoutX="10.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
+                        <Pane layoutX="10.0" layoutY="14.0" prefHeight="307.0" prefWidth="306.0" style="-fx-background-color: #54D06D; -fx-border-color: black;">
                            <children>
-                              <Pane layoutX="68.0" layoutY="14.0" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
+                              <Pane fx:id="panelA4" layoutX="68.0" layoutY="14.0" onMouseClicked="#verCarro" prefHeight="141.0" prefWidth="171.0" style="-fx-border-color: black;">
                                  <children>
-                                    <ImageView fitHeight="116.0" fitWidth="167.0" layoutX="2.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="116.0" fitWidth="167.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/Mustang_GT.png" />
                                        </image>
@@ -203,26 +206,31 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtPrecioA3" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
+                                    <TextField fx:id="txtPrecioA3" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="264.0" promptText="\$$$$$$$$$" />
                                  </children>
                               </VBox>
                            </children>
                         </Pane>
+                        <Label fx:id="txtIdC3" layoutX="269.0" layoutY="157.0" text="Label" />
                      </children>
                   </Pane>
                </children>
             </GridPane>
-            <Pane fx:id="VistaCarrito" prefHeight="690.0" prefWidth="657.0" visible="false">
+            <Pane fx:id="VistaCarrito" layoutX="10.0" prefHeight="690.0" prefWidth="647.0" visible="false">
                <children>
-                  <TableView layoutX="10.0" layoutY="65.0" prefHeight="400.0" prefWidth="642.0">
+                  <TableView fx:id="tablaCarrito" layoutX="15.0" layoutY="86.0" prefHeight="400.0" prefWidth="613.0">
                     <columns>
-                      <TableColumn prefWidth="125.0" text="Marca" />
-                      <TableColumn prefWidth="108.0" text="Modelo" />
-                        <TableColumn prefWidth="107.0" text="Color" />
-                        <TableColumn prefWidth="68.0" text="Cantidad" />
-                        <TableColumn prefWidth="110.0" text="Precio" />
-                        <TableColumn prefWidth="121.0" text="Sub-total" />
+                      <TableColumn fx:id="colC1" prefWidth="146.0" text="Marca" />
+                      <TableColumn fx:id="colC2" prefWidth="82.0" text="Modelo" />
+                        <TableColumn fx:id="colC3" prefWidth="78.0" text="Color" />
+                        <TableColumn fx:id="colC4" prefWidth="68.0" text="Cantidad" />
+                        <TableColumn fx:id="colC5" prefWidth="119.0" text="Precio" />
+                        <TableColumn fx:id="colC6" prefWidth="103.0" text="Sub-total" />
+                        <TableColumn fx:id="colBtn" prefWidth="55.0" />
                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                   </TableView>
                   <HBox alignment="CENTER" layoutX="42.0" layoutY="527.0" prefHeight="100.0" prefWidth="387.0" style="-fx-spacing: 30;">
                      <opaqueInsets>
@@ -259,31 +267,18 @@
             </Pane>
             <Pane fx:id="vistaCompras" layoutX="20.0" layoutY="20.0" prefHeight="690.0" prefWidth="657.0" visible="false">
                <children>
-                  <TableView layoutY="66.0" prefHeight="400.0" prefWidth="642.0">
+                  <TableView fx:id="tablaCompras" layoutX="-1.0" layoutY="66.0" prefHeight="400.0" prefWidth="620.0">
                      <columns>
-                        <TableColumn prefWidth="110.0" text="Marca" />
-                        <TableColumn prefWidth="79.0" text="Modelo" />
-                        <TableColumn text="Color" />
-                        <TableColumn prefWidth="83.0" text="Cantidad" />
-                        <TableColumn prefWidth="93.0" text="Precio" />
-                        <TableColumn prefWidth="71.0" text="Sub-total" />
-                        <TableColumn prefWidth="124.0" text="Fecha" />
+                        <TableColumn fx:id="colCopra" prefWidth="104.0" text="Marca" />
+                        <TableColumn fx:id="colCopra2" prefWidth="75.0" text="Modelo" />
+                        <TableColumn fx:id="colCopra3" prefWidth="77.0" text="Color" />
+                        <TableColumn fx:id="colCopra4" prefWidth="74.0" text="Cantidad" />
+                        <TableColumn fx:id="colCopra5" prefWidth="86.0" text="Precio" />
+                        <TableColumn fx:id="colCopra6" prefWidth="91.0" text="Sub-total" />
+                        <TableColumn fx:id="colCopra7" prefWidth="133.0" text="Fecha" />
                      </columns>
                   </TableView>
-                  <HBox alignment="CENTER_LEFT" layoutY="534.0" prefHeight="100.0" prefWidth="648.0" style="-fx-spacing: 5;">
-                     <children>
-                        <Label text="Total encompras realizadas: $">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label text="0">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="534.0" prefHeight="100.0" prefWidth="648.0" style="-fx-spacing: 5;" />
                </children>
             </Pane>
          </children></AnchorPane>
@@ -291,18 +286,13 @@
    <right>
       <AnchorPane prefHeight="690.0" prefWidth="244.0" style="-fx-background-color: #FFE01C;" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="panelDescripcion" prefHeight="690.0" prefWidth="245.0" style="-fx-background-color: #FFE01C;" visible="false">
+            <Pane fx:id="panelDescripcion" layoutX="-9.0" layoutY="6.0" prefHeight="684.0" prefWidth="254.0" style="-fx-background-color: #FFE01C;">
                <children>
-                  <Pane layoutX="23.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                  <Pane fx:id="contenImg" layoutX="27.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <children>
-                        <VBox alignment="CENTER" layoutX="2.0" prefHeight="200.0" prefWidth="196.0">
-                           <children>
-                              <ImageView fx:id="imgContenedor" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </Pane>
-                  <VBox alignment="CENTER" layoutX="24.0" layoutY="229.0" prefHeight="143.0" prefWidth="197.0">
+                        <VBox fx:id="contenImg" alignment="CENTER" layoutX="2.0" layoutY="51.0" prefHeight="99.0" prefWidth="197.0" />
+                     </children></Pane>
+                  <VBox alignment="CENTER" layoutX="29.0" layoutY="229.0" prefHeight="143.0" prefWidth="197.0">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 5;">
                            <children>
@@ -364,13 +354,13 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtPrecioGenral" alignment="CENTER" prefHeight="36.0" prefWidth="222.0" />
+                        <TextField fx:id="txtPrecioGenral" alignment="CENTER" focusTraversable="false" prefHeight="36.0" prefWidth="222.0" />
                         <Label text="Cantidad">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Spinner fx:id="spinnerCantidadGenral" editable="true" prefHeight="38.0" prefWidth="222.0" />
+                        <Spinner fx:id="spinnerCantidadGenral" editable="true" focusTraversable="false" prefHeight="38.0" prefWidth="222.0" />
                         <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="222.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -394,6 +384,7 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <Label fx:id="txtIdGeneral" layoutX="113.0" layoutY="379.0" text="Label" />
                </children>
             </Pane>
             <Pane fx:id="PanelHistorial" layoutX="10.0" layoutY="10.0" prefHeight="690.0" prefWidth="245.0" style="-fx-background-color: #FFE01C;" visible="false">
