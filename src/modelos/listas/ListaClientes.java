@@ -11,10 +11,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import modelos.Cliente;
+import modelos.Vehiculo;
 import utiliades.ManejoDatos;
 import utiliades.Utilidades;
 
@@ -25,15 +28,13 @@ import utiliades.Utilidades;
 public class ListaClientes implements Utilidades {
 
     Cliente cab;
-    String ruta;
 
     public ListaClientes() {
         cab = null;
-        ruta = "C:\\Base de datos\\ListaClientes.txt";
     }
 
-    public String getRuta() {
-        return ruta;
+    public Cliente getCab() {
+        return cab;
     }
 
     public Cliente getBuscarId(long id) {
@@ -61,6 +62,23 @@ public class ListaClientes implements Utilidades {
             q = cab;
             do {
                 if (q.getUser().equals(usuario) && q.getPasword().equals(contra)) {
+                    return q;
+                } else {
+                    q = q.getSiguiente();
+                }
+            } while (q != cab);
+            return null;
+        }
+    }
+
+    public Cliente getBuscarCliente(String usuario) {
+        Cliente q = null;
+        if (cab == null) {
+            return null;
+        } else {
+            q = cab;
+            do {
+                if (q.getUser().equals(usuario)) {
                     return q;
                 } else {
                     q = q.getSiguiente();
@@ -115,7 +133,6 @@ public class ListaClientes implements Utilidades {
         } else {
             info = new Cliente(id, telefono, nombre, direccion, user, pass);
             mostrarAlerta(Alert.AlertType.INFORMATION, "Nodo creado", "Informacion");
-            ManejoDatos.getDatos().guardarCliente(info);
         }
         return info;
     }
@@ -205,6 +222,63 @@ public class ListaClientes implements Utilidades {
         }
     }
 
+    public void guardarDatosCliente(ListaClientes listaC) {
+
+        String direccion = System.getProperty("user.dir") + "\\src\\datos\\ListaClientes.txt";
+
+        Path archivo = Paths.get(direccion);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo.toFile(), false))) {
+            Cliente nuevo = listaC.cab;
+
+            do {
+                writer.write(nuevo.getIdentificacion() + " - ");
+                writer.write(nuevo.getNombre() + " - ");
+                writer.write(nuevo.getDireccion() + " - ");
+                writer.write(nuevo.getTelefono() + " - ");
+                writer.write(nuevo.getUser() + " - ");
+                writer.write(nuevo.getPasword());
+                writer.newLine();
+
+                nuevo = nuevo.getSiguiente();
+            } while (nuevo != cab);
+
+            System.out.println("Datos guardados.");
+        } catch (IOException e) {
+            System.out.println("Error al guardar los datos: " + e.getMessage());
+        }
+    }
+
+    public void cargarDatosCliente() {
+
+        String direccion = System.getProperty("user.dir") + "\\src\\datos\\ListaClientes.txt";
+
+        Path archivo = Paths.get(direccion);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivo.toFile()))) {
+
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+
+                String[] atributos = linea.split(" - ");
+
+                long id = Long.parseLong(atributos[0]);
+                String nombre = atributos[1];
+                String direcion = atributos[2];
+                long telefono = Long.parseLong(atributos[3]);
+                String usuario = atributos[4];
+                String clave = atributos[5];
+
+                addCliente(id, telefono, nombre, direccion, usuario, clave);
+            }
+            System.out.println("Fino Clientes");
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar los datos: " + e.getMessage());
+        }
+    }
+
     @Override
     public void mostrarAlerta(Alert.AlertType tipo, String mensaje, String titulo) {
         {
@@ -220,6 +294,30 @@ public class ListaClientes implements Utilidades {
     @Override
     public boolean cajasVacias() {
         return true;
+    }
+
+    private Cliente addCliente(long identificacion,
+            long telefono, String nombre,
+            String direccion, String user,
+            String pasword) {
+
+        Cliente info = new Cliente(identificacion, telefono, nombre, direccion, user, pasword);
+        Cliente q;
+        if (info != null) {
+            if (cab == null) {
+                cab = info;
+                cab.setSiguiente(cab);
+            } else {
+                q = getUltimo();
+                q.setSiguiente(info);
+                info.setSiguiente(cab);
+
+            }
+        } else {
+        }
+
+        return info;
+
     }
 
 }
