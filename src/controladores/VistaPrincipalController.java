@@ -196,8 +196,6 @@ public class VistaPrincipalController implements Initializable, Utilidades {
     private TableColumn<Compra, Double> colCopra6;
     @FXML
     private TableColumn<Compra, LocalDate> colCopra7;
-    @FXML
-    private Label txtTotal;
 
     /**
      * Initializes the controller class.
@@ -543,7 +541,7 @@ public class VistaPrincipalController implements Initializable, Utilidades {
                     c.setSubTotal(newValue.getSubTotal());
                     c.setFecha(date);
                     pilas.getCarrito(c.getCodigoCompra());
-                    pilas.setPushCompra(c);
+                pilas.setPushCompra(c);
                     pilas.eliminar(pilas.getCarrito(), (int) newValue.getIdCliente());
                     tablaCarrito.getItems().remove(newValue);
                     actualizarTabla2();
