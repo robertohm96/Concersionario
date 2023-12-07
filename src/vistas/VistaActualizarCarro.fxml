@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VistaActualizarCarroController">
+   <children>
+      <Pane prefHeight="401.0" prefWidth="370.0" style="-fx-background-color: #FFE01C;">
+         <children>
+            <VBox alignment="CENTER" layoutX="35.0" prefHeight="401.0" prefWidth="300.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 8;">
+                     <children>
+                        <Label text="Seleccione" />
+                        <ComboBox fx:id="comboAuto" prefWidth="150.0" promptText="Auto" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 8;">
+                     <children>
+                        <Label text="Cantidad" />
+                        <TextField fx:id="txtCantidad" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 8;">
+                     <children>
+                        <Label text="Precio" />
+                        <TextField fx:id="txtPrecio" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 100;">
+                     <children>
+                        <Button fx:id="btnActulizarCarro" mnemonicParsing="false" onAction="#Actualizar" style="-fx-background-color: #54D06D; -fx-border-color: black;" text="Actualizar" textFill="WHITE" />
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#salir" style="-fx-background-color: #FF5555; -fx-border-color: black;" text="Cancelar" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
