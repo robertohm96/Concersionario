@@ -13,31 +13,20 @@ import javafx.scene.image.Image;
 public class Vehiculo {
 
     private int codigo;
-    private Image foto;
     private String marca, modelo, color;
     private int stock;
-    private float precio;
+    private double precio;
     private Vehiculo siguiente;
 
-    public Vehiculo(int codigo, Image foto, String marca, String modelo,
-            String color, int stock, float precio, Vehiculo siguiente,
-            Vehiculo anterior) {
+    public Vehiculo(int codigo, String marca, String modelo,
+            String color, int stock, double precio) {
         this.codigo = codigo;
-        this.foto = foto;
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.stock = stock;
         this.precio = precio;
-        this.siguiente = siguiente;
-    }
-
-    public Image getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Image foto) {
-        this.foto = foto;
+        this.siguiente = null;
     }
 
     public String getMarca() {
@@ -72,11 +61,11 @@ public class Vehiculo {
         this.stock = stock;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

@@ -13,7 +13,7 @@ public class Cliente extends Admin {
     private long identificacion, telefono;
     private String nombre, direccion;
     private Cliente siguiente;
-
+    
     public Cliente(long identificacion,
             long telefono, String nombre,
             String direccion, String user,
@@ -24,6 +24,10 @@ public class Cliente extends Admin {
         this.nombre = nombre;
         this.direccion = direccion;
         siguiente = null;
+    }
+
+    public Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public long getIdentificacion() {

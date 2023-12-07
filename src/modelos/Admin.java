@@ -17,6 +17,9 @@ public class Admin {
         this.pasword = pasword;
     }
 
+    public Admin() {
+    }
+
     public String getUser() {
         return user;
     }
