@@ -49,11 +49,11 @@ public class ColaHistorialCompra implements Utilidades {
         return getTotalCompras() == 0;
     }
 
-    public boolean buscar(String codigo) {
+    public boolean buscar(int codigo) {
         if (!colaVacia()) {
             Compra aux = getPrimero();
             while (aux != null) {
-                if (aux.getCodigoCompra().equalsIgnoreCase(codigo)) {
+                if (aux.getCodigoCompra() == (codigo)) {
                     return true;
                 }
                 aux = aux.getSiguiente();
@@ -93,7 +93,7 @@ public class ColaHistorialCompra implements Utilidades {
             Compra aux = getPrimero();
             Compra anterior = null;
             while (aux != null) {
-                if (aux.getCodigoCompra().equals(compra.getCodigoCompra())) {
+                if (aux.getCodigoCompra() == (compra.getCodigoCompra())) {
                     if (anterior == null) {
                         eliminarPrimero();
                     } else {
@@ -110,12 +110,12 @@ public class ColaHistorialCompra implements Utilidades {
         }
     }
 
-    public void buscarQuitar(String codigo) {
+    public void buscarQuitar(int codigo) {
         if (!colaVacia()) {
             Compra aux = getPrimero();
             Compra anterior = null;
             while (aux != null) {
-                if (aux.getCodigoCompra().equals(codigo)) {
+                if (aux.getCodigoCompra() == (codigo)) {
                     if (anterior == null) {
                         eliminarPrimero();
                     } else {
