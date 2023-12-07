@@ -39,7 +39,7 @@ import utiliades.Utilidades;
  */
 public class VistaRegistrarController implements Initializable, Utilidades {
 
-    ListaClientes listaClientes = ManejoDatos.getDatos().getListaClientes();
+    ListaClientes listaC = ManejoDatos.getDatos().getListaClientes();
     @FXML
     private TextField txtId;
     @FXML
@@ -73,7 +73,8 @@ public class VistaRegistrarController implements Initializable, Utilidades {
                     + "para poder registrarte como cliente", "Advertencia");
         } else {
             if (event.getSource() == btnRegistrar) {
-                listaClientes.setAddFin(txtId, txtNombre, txtDireccion, txtTelfono, txtUser, txtPass);
+                listaC.setAddFin(txtId, txtNombre, txtDireccion, txtTelfono, txtUser, txtPass);
+                listaC.guardarDatosCliente(listaC);
             }
         }
     }

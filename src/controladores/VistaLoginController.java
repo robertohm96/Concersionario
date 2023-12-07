@@ -1,5 +1,6 @@
 package controladores;
 
+import com.sun.deploy.util.SessionState;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelos.Admin;
+import modelos.Cliente;
+import modelos.listas.ListaClientes;
+import modelos.pilas.Pilas;
 import utiliades.ManejoDatos;
 import utiliades.Utilidades;
 
@@ -29,6 +34,8 @@ import utiliades.Utilidades;
  */
 public class VistaLoginController implements Initializable, Utilidades {
 
+    private ListaClientes listaC = ManejoDatos.getDatos().getListaClientes();
+    private Pilas pilas = ManejoDatos.getDatos().getPilas();
     @FXML
     private Button btnIngresar;
     @FXML
@@ -49,7 +56,13 @@ public class VistaLoginController implements Initializable, Utilidades {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        if (listaC.getCab() == null) {
+            listaC.cargarDatosCliente();
+        }
+        if (pilas.getAdmins().isEmpty()) {
+            pilas.cargarDatosDesdeArchivoAdmin();
+        }
     }
 
     @FXML
@@ -57,7 +70,6 @@ public class VistaLoginController implements Initializable, Utilidades {
         if (event.getSource() == btnRegistro) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaRegistrar.fxml"));
-
                 Scene scene = new Scene(root);
                 Stage stage2 = new Stage();
                 stage2.setScene(scene);
@@ -84,13 +96,19 @@ public class VistaLoginController implements Initializable, Utilidades {
             mostrarAlerta(Alert.AlertType.WARNING, "Debes llenar todos los campos"
                     + "para poder registrarte como cliente", "Advertencia");
         } else {
-            if (event.getSource() == btnIngresar) {
-                if (ManejoDatos.getDatos().getListaClientes().getBuscarCliente(txtCorreo.getText(), txtClave.getText()) != null) {
+            Admin aux = pilas.getAdminUsuario(txtCorreo.getText());
+            Cliente auxC = listaC.getBuscarCliente(txtCorreo.getText());
+            if (aux != null && auxC == null) {
+                if (aux.getPasword().equals(txtClave.getText())) {
+                    mostrarVistaActulizarCarro();
+                }
+            } else if (auxC != null && aux == null) {
+                if (auxC.getPasword().equals(txtClave.getText())) {
                     mostrarVistaPrincipal();
-                } else {
-                    mostrarAlerta(Alert.AlertType.ERROR, "Credenciales incorrectas", "Algo no anda bien :/");
                 }
 
+            } else {
+                mostrarAlerta(Alert.AlertType.ERROR, "Credenciales incorrectas", "Algo no anda bien :/");
             }
         }
     }
@@ -116,10 +134,26 @@ public class VistaLoginController implements Initializable, Utilidades {
     public void mostrarVistaPrincipal() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaPrincipal.fxml"));
+            
             Scene scene = new Scene(root);
             Stage stage2 = new Stage();
             stage2.setScene(scene);
-            stage2.initStyle(StageStyle.UNDECORATED);          
+            stage2.initStyle(StageStyle.UNDECORATED);
+            stage2.show();
+            Stage stage = (Stage) this.btnRegistro.getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(VistaLoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void mostrarVistaActulizarCarro() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaActualizarCarro.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage2 = new Stage();
+            stage2.setScene(scene);
+            stage2.initStyle(StageStyle.UNDECORATED);
             stage2.show();
             Stage stage = (Stage) this.btnRegistro.getScene().getWindow();
             stage.close();
