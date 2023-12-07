@@ -1,4 +1,4 @@
-1 - Mazda 3 - 2014 - 40 - gris - 3000000
-2 - Audi R8 - 2013 - 30 - azul - 40000000
-3 - Mercedes amg - 2019 - 10 - blanco - 120000000
-4 - Mustang GT - 2023 - 50 - naranja - 2000000
+1 - Mazda 3 - 2014 - 40 - gris - 30000
+2 - Audi R8 - 2013 - 30 - azul - 150000
+3 - Mercedes amg - 2019 - 10 - blanco - 1200000
+4 - Mustang GT - 2023 - 50 - naranja - 400000

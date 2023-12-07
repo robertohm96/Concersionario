@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Concesionario.jar" size="12965135" download="eager" />
+    <jar href="Concesionario.jar" size="12988224" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="controladores.Main"  name="Concesionario" />
   <update check="always"/>

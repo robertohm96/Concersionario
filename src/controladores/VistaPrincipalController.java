@@ -134,10 +134,6 @@ public class VistaPrincipalController implements Initializable, Utilidades {
     @FXML
     private Button btnAddCarrito1;
     @FXML
-    private Button btnAddCarrito11;
-    @FXML
-    private Button btnAddCarrito12;
-    @FXML
     private Pane vistaDeseos;
     @FXML
     private Button btnAddCarrito111;
@@ -196,13 +192,17 @@ public class VistaPrincipalController implements Initializable, Utilidades {
     private TableColumn<Compra, Double> colCopra6;
     @FXML
     private TableColumn<Compra, LocalDate> colCopra7;
+    @FXML
+    private Button btnVaciarCarrito;
+    @FXML
+    private Button btnElimiar1;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        panelDescripcion.setVisible(false);
         colC1.setCellValueFactory(new PropertyValueFactory<>("marca"));
         colC1.setStyle("-fx-alignment: CENTER");
         colC2.setCellValueFactory(new PropertyValueFactory<>("modelo"));
@@ -316,7 +316,7 @@ public class VistaPrincipalController implements Initializable, Utilidades {
         };
 
         colBtn.setCellFactory(construirColCompra);
-
+        VistaCarrito.setVisible(false);
     }
 
     public Label getTxtNombreCliente() {
@@ -541,7 +541,7 @@ public class VistaPrincipalController implements Initializable, Utilidades {
                     c.setSubTotal(newValue.getSubTotal());
                     c.setFecha(date);
                     pilas.getCarrito(c.getCodigoCompra());
-                pilas.setPushCompra(c);
+                    pilas.setPushCompra(c);
                     pilas.eliminar(pilas.getCarrito(), (int) newValue.getIdCliente());
                     tablaCarrito.getItems().remove(newValue);
                     actualizarTabla2();
@@ -568,6 +568,12 @@ public class VistaPrincipalController implements Initializable, Utilidades {
             actualizarTabla();
 
         }
+        if (event.getSource() == btnVaciarCarrito) {
+            vaciarCarrito();
+        }
+        if (event.getSource() == btnElimiar1) {
+            eliminarUnElemento();
+        }
 
     }
 
@@ -590,6 +596,16 @@ public class VistaPrincipalController implements Initializable, Utilidades {
     @Override
     public boolean cajasVacias() {
         return true;
+    }
+
+    public void vaciarCarrito() {
+        pilas.eliminarPilaCarrito();
+        actualizarTabla();
+    }
+
+    public void eliminarUnElemento() {
+        pilas.eliminarUnPilaCarrito();
+        actualizarTabla();
     }
 
 }

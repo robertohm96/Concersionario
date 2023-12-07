@@ -17,10 +17,10 @@
         <AnchorPane prefHeight="320.0" prefWidth="524.0" style="-fx-background-color: #494646;">
             <children>
                 <Button fx:id="btnIngresar" ellipsisString="" layoutX="223.0" layoutY="208.0" mnemonicParsing="false" onAction="#Ingresar" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #009B21;" text="Ingresar" textAlignment="CENTER" textFill="WHITE" />
-                <Label fx:id="labelUs" layoutX="86.0" layoutY="56.0" text="Usuario" />
-                <Label fx:id="labelContra" layoutX="63.0" layoutY="123.0" text="Contraseña" />
-            <TextField fx:id="txtCorreo" layoutX="139.0" layoutY="52.0" prefHeight="25.0" prefWidth="260.0" promptText="Correo" />
-            <TextField fx:id="txtClave" layoutX="139.0" layoutY="119.0" prefHeight="25.0" prefWidth="260.0" promptText="*********" />
+                <Label fx:id="labelUs" layoutX="86.0" layoutY="56.0" text="Usuario" textFill="WHITE" />
+                <Label fx:id="labelContra" layoutX="63.0" layoutY="123.0" text="Contraseña" textFill="WHITE" />
+            <TextField fx:id="txtCorreo" layoutX="139.0" layoutY="52.0" prefHeight="25.0" prefWidth="260.0" promptText="Correo" text="admin@gmail.com" />
+            <TextField fx:id="txtClave" layoutX="139.0" layoutY="119.0" prefHeight="25.0" prefWidth="260.0" promptText="*********" text="admin123" />
             <ImageView fx:id="btnSalir" fitHeight="38.0" fitWidth="41.0" layoutX="472.0" layoutY="14.0" onMouseClicked="#salir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/exit.png" />

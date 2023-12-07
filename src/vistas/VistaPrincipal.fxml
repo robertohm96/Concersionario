@@ -216,7 +216,7 @@
                   </Pane>
                </children>
             </GridPane>
-            <Pane fx:id="VistaCarrito" layoutX="10.0" prefHeight="690.0" prefWidth="647.0" visible="false">
+            <Pane fx:id="VistaCarrito" layoutX="10.0" prefHeight="690.0" prefWidth="647.0">
                <children>
                   <TableView fx:id="tablaCarrito" layoutX="15.0" layoutY="86.0" prefHeight="400.0" prefWidth="613.0">
                     <columns>
@@ -238,8 +238,8 @@
                      </opaqueInsets>
                      <children>
                         <Button fx:id="btnAddCarrito1" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #00A022; -fx-border-color: black; -fx-border-radius: 10;" text="Comprar" textFill="WHITE" />
-                        <Button fx:id="btnAddCarrito11" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #FF0000; -fx-border-color: black; -fx-border-radius: 10;" text="Eliminar" textFill="WHITE" />
-                        <Button fx:id="btnAddCarrito12" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: #FF7400; -fx-border-color: black; -fx-border-radius: 10;" text="Vaciar Carrito" textFill="WHITE" />
+                        <Button fx:id="btnElimiar1" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: #FF0000; -fx-border-color: black; -fx-border-radius: 10;" text="Eliminar" textFill="WHITE" />
+                        <Button fx:id="btnVaciarCarrito" mnemonicParsing="false" onAction="#agregarCarrito" prefHeight="32.0" prefWidth="143.0" style="-fx-background-color: #FF7400; -fx-border-color: black; -fx-border-radius: 10;" text="Vaciar Carrito" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

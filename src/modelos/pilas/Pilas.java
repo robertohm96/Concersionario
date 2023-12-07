@@ -248,10 +248,18 @@ public class Pilas implements Utilidades {
 
                 cant = aux.getCantidad() - cantidad;
                 carrito.get(i).setCantidad(cant);
-                mostrarAlerta(Alert.AlertType.INFORMATION, "el stock contara con "+cant, "Stock actulizado");
+                mostrarAlerta(Alert.AlertType.INFORMATION, "el stock contara con " + cant, "Stock actulizado");
             }
             i++;
         }
+    }
+
+    public void eliminarUnPilaCarrito() {
+        carrito.pop();
+    }
+    
+    public void eliminarPilaCarrito() {
+        carrito.clear();
     }
 
     public void cargarDatosDesdeArchivoCarrito() {
