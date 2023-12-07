@@ -1,0 +1,3 @@
+123 - yo - C:\Users\usuario\Documents\NetBeansProjects\Proyecto fx\Concesionario\src\datos\ListaClientes.txt - 213314 - yo@gmail.com - 123
+2323 - Rober - C:\Users\usuario\Documents\NetBeansProjects\Proyecto fx\Concesionario\src\datos\ListaClientes.txt - 23423 - rr@gmail.com - 321
+5453 - prueba3 - en algun lugar - 234343 - prueba - prueba
